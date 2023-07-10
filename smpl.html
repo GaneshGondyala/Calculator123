@@ -1,0 +1,224 @@
+<html>
+    <head id="s1"><br>
+        <h1><center>Simple interest calculator!</center></h1>
+        <body>
+            <div class="pop" id="pop">
+                <img src="abcd.png">
+                <h3>THANK YOU!</h3>
+                <P>Calculated succesfully the required result has shown!</P>
+                <button onclick="closepop()">OK</button>
+              
+            </div>
+            <div class="warn" id="warn">
+                <img src="warn.png">
+                <h3>Warning!</h3>
+                <P>Please provide the neccesary details</P>
+                <button onclick="closewarn()">OK</button>
+              
+            </div>
+            <br>
+            <b><h2>Principle</h2></b><input type="number" class="q" size="20" placeholder="Enter Amount/-" id="a1">
+            <b><h2>Rate</h2></b><input type="number" class="q" size="20" placeholder="Per-Annum-Rate" id="a3">
+            <b><h2>Period</h2></b><input type="number" class="q" size="20" placeholder="Years/Months" id="a4"> </tr>
+            <select id="a5">
+                <option>--select--</option>
+                <option value="year">year</option>
+                <option value="months">months</option>
+            </select><br><br>
+                <br>
+                    <button value="send" onclick="f1()" class="button">submit</button>
+                        
+            <input type="text" class="q" size="20" placeholder="Result" id="a2">
+        </body>
+        <style>
+            .warn{
+        width:200px;
+        height: 200px;
+        background:rgb(120, 236, 82);
+        border-radius: 2px;
+        position: absolute;
+        top:0;
+        left: 50%;
+        transform: translate(-50%,-50%)scale(0.1); 
+        text-align: center;
+        padding:0 7px 7px ;
+        color: #333;
+        visibility: hidden;
+        transition: transform 0.3s, top 0.3s;
+        }
+        .open-warn{
+            visibility: visible;
+            top:30%;
+            transform: translate(-50%,-50%)scale(1); 
+        }
+      .warn img{
+        width: 100px;
+        margin-top: -50px;
+        box-shadow:0.2px 5px rgba(0,0,0,0.2);
+      }
+      .warn h2{
+        font-size: 38px;
+        font-weight: 500;
+        margin:30px 0 10px;
+      }
+      .warn button{
+        width: 80%;
+        margin-top: -2px;
+        padding: 10px 0;
+        background: hsl(11, 90%, 47%);
+        color: rgb(220, 229, 235);
+        border: 0;
+        outline: none;
+        font-size: 18px;
+        border-radius: 4px;
+        cursor: pointer;
+        box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+
+
+
+      }
+            .pop {
+        width:200px;
+        height: 200px;
+        background:rgb(250, 106, 4);
+        border-radius: 2px;
+        position: absolute;
+        top:0;
+        left: 50%;
+        transform: translate(-50%,-50%)scale(0.1); 
+        text-align: center;
+        padding:0 7px 7px ;
+        color: #333;
+        visibility: hidden;
+        transition: transform 0.3s, top 0.3s;
+        }
+        .open-pop{
+            visibility: visible;
+            top:30%;
+            transform: translate(-50%,-50%)scale(1); 
+        }
+      .pop img{
+        width: 100px;
+        margin-top: -50px;
+        box-shadow:0.2px 5px rgba(0,0,0,0.2);
+      }
+      .pop h2{
+        font-size: 38px;
+        font-weight: 500;
+        margin:30px 0 10px;
+        color: #d5d8d8;
+      }
+      .pop p{
+        color: #eee;
+      }
+      .pop button{
+        width: 80%;
+        margin-top: -2px;
+        padding: 10px 0;
+        background: hsl(128, 66%, 43%);
+        color: rgb(229, 239, 244);
+        border: 0;
+        outline: none;
+        font-size: 18px;
+        border-radius: 4px;
+        cursor: pointer;
+        box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+      }
+            h1{
+                font-style: italic;
+                color: chartreuse;
+                font-size: 40px;
+            }
+             select{
+            font-size: 0.9rem;
+            padding: 9px 12px;
+            background-color: rgb(202, 113, 40);
+            
+        }
+            #s1{
+                background-color: rgb(0, 255, 102);
+                color: red;
+            }
+            body{
+                background-image: url(https://thumbs.dreamstime.com/b/business-concept-meaning-simple-interest-loans-inscription-piece-paper-business-concept-meaning-simple-interest-187332861.jpg);
+                height: 100%; 
+                background-position: center;
+                  background-repeat: no-repeat;
+                background-size: cover;
+            }
+            
+            .q{
+                background-color: rgb(129, 189, 224);
+            color: rgb(63, 11, 11);
+            padding: 9px 16px;
+            color: #021c03;
+            font-size: 13px;
+            font-style: italic;
+            border-radius: 25px;
+            border: 7px solid rgb(149, 231, 56);
+            animation: mymove 5s infinite;
+        
+        }
+        @keyframes mymove {
+  50% {border-color: rgb(12, 13, 12);}
+}
+            .button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #de4b06;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px rgb(82, 75, 75);
+}
+
+.button:hover {background-color: #021c03}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+        </style>
+        <script>
+            {
+        function f1()
+            {
+                
+                pop.classList.add("open-pop");
+
+            var a11=document.getElementById("a1").value;
+            var a22=document.getElementById("a3").value;
+            var  a33=document.getElementById("a4").value;
+            var a44=document.getElementById("a5").value;
+            if (a44=="year")
+            {
+                
+                c=(a11*a22*(a33*12))/100;
+                document.getElementById("a2").value=c;
+
+            }
+            else{
+                c=a11*a22*a33;
+                
+                k=c/100;
+                document.getElementById("a2").value=k;
+
+
+            }
+
+            
+            }
+            function closepop(){
+          pop.classList.remove("open-pop");
+        }
+        }
+        </script>
+    </head>
+    
+</html>
